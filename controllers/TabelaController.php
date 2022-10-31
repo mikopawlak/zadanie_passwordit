@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Models;
+namespace app\controllers;
 
 use app\Models\Tabela;
 use app\Models\TabelaSearch;
