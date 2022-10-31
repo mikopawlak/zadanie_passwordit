@@ -2,6 +2,10 @@
 
 namespace app\models;
 
+use kartik\builder\TabularForm;
+use kartik\grid\GridView;
+use yii\helpers\ArrayHelper;
+
 use Yii;
 
 /**
@@ -42,4 +46,18 @@ class Tabela extends \yii\db\ActiveRecord
             'ts' => 'Ts',
         ];
     }
+
+    public function getFormAttribs() {
+        return [
+            // primary key column
+            'id'=>[ // primary key attribute
+                'type'=>TabularForm::INPUT_HIDDEN, 
+            ], 
+            'data'=>['type'=>TabularForm::INPUT_TEXT],
+            'ts'=>['type'=>TabularForm::INPUT_STATIC],
+        ];
+    }
+   
 }
+
+

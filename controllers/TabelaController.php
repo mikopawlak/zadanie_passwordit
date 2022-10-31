@@ -46,6 +46,16 @@ class TabelaController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionTabular()
+    {
+        $searchModel = new TabelaSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('tabular', [
+            'model' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     /**
      * Displays a single Tabela model.
@@ -59,7 +69,7 @@ class TabelaController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-
+ 
     /**
      * Creates a new Tabela model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -91,7 +101,10 @@ class TabelaController extends Controller
      */
     public function actionUpdate($id)
     {
+        
         $model = $this->findModel($id);
+        $searchModel = new TabelaSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -99,6 +112,7 @@ class TabelaController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'dataProvider' => $dataProvider,
         ]);
     }
 

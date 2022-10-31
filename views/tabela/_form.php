@@ -1,7 +1,9 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+
+use kartik\form\ActiveForm;
+use kartik\builder\TabularForm;
 
 /** @var yii\web\View $this */
 /** @var app\Models\Tabela $model */
@@ -19,6 +21,11 @@ use yii\widgets\ActiveForm;
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); 
+    
+
+    
+    
+    ?>
 
 </div>
