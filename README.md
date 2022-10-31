@@ -5,3 +5,7 @@
     'charset' => 'utf8',
 
     db dump in _db folder. 
+
+    Make sure you change db port and host!
+    
+    Password Uslugi Informatyczne - hope it works and you like it!
