@@ -26,6 +26,7 @@ class Tabela extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['data'], 'safe'],
             [['ts'], 'safe'],
         ];
     }
@@ -37,6 +38,7 @@ class Tabela extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'data' => 'Data',
             'ts' => 'Ts',
         ];
     }

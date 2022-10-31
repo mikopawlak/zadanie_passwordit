@@ -12,7 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'ts')->textInput() ?>
+    <?= $form->field($model, 'ts')->textInput(['readonly' => true, 'value' => date('Y-m-d H:i:s')]) ?>
+    <?= $form->field($model, 'data')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
